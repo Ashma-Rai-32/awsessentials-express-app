@@ -12,7 +12,7 @@ on:
 env:
   AWS_REGION: ap-southeast-2  # Change this to your AWS region
   ECR_REPOSITORY: awsessentials/ashma-private  # Change this to your ECR repository name
-  EC2_HOST: ec2-3-26-5-84.ap-southeast-2.compute.amazonaws.com  # Change this to your EC2 host
+  EC2_HOST: 3.104.109.194 # Change this to your EC2 host
 
 jobs:
   deploy:
@@ -45,7 +45,7 @@ jobs:
       uses: appleboy/ssh-action@master
       with:
         host: ${{ env.EC2_HOST }}
-        username: ubuntu  # Change this if your EC2 instance uses a different username
+        username: ec2-user  # Change this if your EC2 instance uses a different username
         key: ${{ secrets.EC2_SSH_KEY }}
         script: |
           # Login to ECR
