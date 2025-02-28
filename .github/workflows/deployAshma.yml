@@ -7,12 +7,15 @@ on:
             description: "testinput"
             default: true
             required: true
+  push:
+    branches:
+      - main
 
 
 env:
   AWS_REGION: ap-southeast-2  # Change this to your AWS region
   ECR_REPOSITORY: awsessentials/ashma-private  # Change this to your ECR repository name
-  EC2_HOST: 3.104.109.194 # Change this to your EC2 host
+  EC2_HOST: 13.54.95.118 # Change this to your EC2 host
 
 jobs:
   deploy:
